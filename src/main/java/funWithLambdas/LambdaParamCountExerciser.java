@@ -1,6 +1,12 @@
 package funWithLambdas;
 
-public class LambdaExerciser {
+/**
+ * Demonstrates the syntax choices for using lambdas with 0-2 input parameters.
+ * 
+ * @author bshanahan
+ *
+ */
+public class LambdaParamCountExerciser {
 
 	/**
 	 * FIs with various parameter counts

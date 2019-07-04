@@ -1,5 +1,11 @@
 package funWithLambdas;
 
+/**
+ * Demonstrates how lambdas automagically infer generic types from context.
+ * 
+ * @author bshanahan
+ *
+ */
 public class LambdaGenericsExerciser {
 
 	static class Type1 {
