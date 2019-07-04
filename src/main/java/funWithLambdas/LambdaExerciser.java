@@ -18,33 +18,6 @@ public class LambdaExerciser {
 	}
 
 	/**
-	 * Interfaces can have methods and still be FIs, sort of. There is little
-	 * production value in extending FIs. Done here so I can use same 'emit'
-	 * function.
-	 */
-	interface FunctionalInterfaceWithDefaults extends FunctionalInterfaceOneParam {
-		/**
-		 * You can have static fields and still be an FI.
-		 */
-		String member = "statically initialized String";
-
-		/**
-		 * If a method is "default" and it has an implementation, you can still be an
-		 * FI.
-		 */
-		default String aDefaultMethod_preview(int param) {
-			return Integer.toString(param);
-		}
-
-		/**
-		 * You can have a static function and still be an FI.
-		 */
-		static String aStaticMethod(String param) {
-			return member + ", " + param;
-		}
-	}
-
-	/**
 	 * Functions that accept a particular FI signature as a parameter. The compiler
 	 * uses this to infer what FI to turn the lambda into.
 	 */
@@ -145,9 +118,5 @@ public class LambdaExerciser {
 
 		emitFIMultiParams((param1, param2) -> "Or infer FI base type from context: " + param1 + param2);
 
-		// default and static functions don't break FI.
-		FunctionalInterfaceWithDefaults fiwd = param -> (param
-				+ "FIs can have default and static non-abstract functions");
-		emitFIOneParam(fiwd);
 	}
 }
