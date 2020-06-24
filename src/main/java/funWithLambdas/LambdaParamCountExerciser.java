@@ -47,7 +47,11 @@ public class LambdaParamCountExerciser {
 		FunctionalInterfaceNoParams lambdasCanBeInstantiatedTraditionally = new FunctionalInterfaceNoParams() {
 			@Override
 			public String noParamFunction() {
-				return "inline implemented anonymous behavior";
+				return internal();
+			}
+
+			public String internal() {
+				return "inline";
 			}
 		};
 		emitFINoParams(lambdasCanBeInstantiatedTraditionally);
@@ -67,7 +71,7 @@ public class LambdaParamCountExerciser {
 				((FunctionalInterfaceNoParams) () -> "Cast required if target FI not inferrable").noParamFunction());
 
 		// With a Functional Interface with params, you can,
-		// declare it tradtionally
+		// declare it traditionally
 		// explicitly identify params, code block, and return value
 		// leave out param types, and/or imply return value inline
 		// and in the case of a single param, leave out the param parentheses.
